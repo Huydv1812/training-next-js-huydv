@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getListtag } from "../../api/getApi";
 import { GithubFilled } from "@ant-design/icons";
 import { useRouter } from "next/router";

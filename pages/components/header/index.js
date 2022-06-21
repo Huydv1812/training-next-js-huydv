@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getListtag } from "../../api/getApi";
 import { useRouter } from "next/router";
 
@@ -28,7 +28,12 @@ export const Header = () => {
       <div className="header-bottom">
         <div className="container">
           <div className="list-tag">
-            <div className="tag" onClick={() => { router.push(`/posts`)}}>
+            <div
+              className="tag"
+              onClick={() => {
+                router.push(`/posts`);
+              }}
+            >
               <img
                 src="https://tinmoi.vn/pc2021/static/images/icon-home.svg"
                 alt=""
@@ -37,7 +42,15 @@ export const Header = () => {
 
             {getListTag.map((item, idx) => {
               if (item && item !== "" && idx < 10) {
-                return <div key={idx} className="tag" onClick={()=>getListByTag(item)}>{item}</div>;
+                return (
+                  <div
+                    key={idx}
+                    className="tag"
+                    onClick={() => getListByTag(item)}
+                  >
+                    {item}
+                  </div>
+                );
               }
               return;
             })}
